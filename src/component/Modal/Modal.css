@@ -1,0 +1,73 @@
+.App-main {
+   position: absolute;
+   top: 25%;
+   left: 50%;
+   transform:translateX(-50%);
+   font-size: calc(10px + 2vmin);
+   color: white;
+   background-color: #282c34;
+   display: none;
+}
+
+.modal {
+   border: 2px solid #ffffff;
+   border-radius: 20px;
+   background-color: #282c34;
+
+}
+
+.modal-log {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   /* padding: 20px 30px;   */
+}
+
+.modal-log::before {
+   content: 'Authorization';
+   text-transform: uppercase;
+   background-color: #fff;
+   color: #282c34;
+   width: 100%;
+   border-top-left-radius: 16px;
+   border-top-right-radius: 16px;
+   padding: 20px 0;
+   margin-bottom: 10px;
+}
+
+/* .modal-log__title {
+   text-transform: uppercase;
+   margin-top: 0;
+   background-color: #fff;
+   color: #282c34;
+   width: 100%;
+} */
+
+.modal-log .btn {
+   margin-bottom: 40px;
+   align-self: center;
+   min-width: 14vh;
+}
+
+.modal-log__content {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin-bottom: 30px;
+}
+
+.modal-log__content label:first-child {
+   margin-bottom: 10px;
+}
+
+.modal-log__content input {
+   background-color: #282c34;
+   font-size: calc(10px + 2vmin);
+   color: white;
+   border: 2px solid #ffffff;
+   border-radius: 20px;
+   text-align: center;
+   width: 80%;
+   align-self: center;
+}
