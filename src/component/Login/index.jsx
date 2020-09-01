@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-// import Modal from '../Modal'
+
 
 import './Login.css'
 
-const Login = () => {
-   return (
-      <main className="App-header">
-         <h1 className="App-header__title">You need to log in</h1>
-         <button className="btn">Log in</button>
-         
-      </main>
-   )
+function Login() {
+
+      return (
+         <main className="App-header">
+            <h1 className="App-header__title">You need to log in</h1>
+            <Link className="btn" to='/modal'>Log in</Link>
+         </main>
+      )
+   
 }
 
 export default Login

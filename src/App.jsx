@@ -4,28 +4,31 @@ import {
   Route,
   Switch,
   Redirect,
-  withRouter
+  withRouter,
 } from "react-router-dom"
 
-import Login from './component/Login'
-import Contact from './component/Contact'
-import Modal from './component/Modal';
+import Login from './component/Login/index'
+import Contact from './component/Contact/index'
+import Modal from './component/Modal/index';
 
 
 import './App.css';
 
 
-function App() {
-  return (
-    <div className="App">
-      <Switch>
-        <Route path='/login' component={Login} />
-        <Route path='/contact' component={Contact} />
-        <Route path='/modal' component={Modal}/>
-        <Redirect from='/' to='/login'/>
-      </Switch>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    const { history } = this.props
+    return (
+      <div className="App">
+        <Switch>
+          <Route history={history} path='/login' component={Login} />
+          <Route history={history} path='/contact' component={Contact} />
+          <Route history={history} path='/modal' component={Modal}/>
+          <Redirect from='/' to='/login'/>
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default withRouter(App);

@@ -1,8 +1,9 @@
-import React , { useState} from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import './Modal.css'
 
 function Modal() {
-   
+
 
    return (
       <section className="App-main">
@@ -19,7 +20,7 @@ function Modal() {
                   <input type="text" placeholder="Your surname" id="lastname" />
                </div>
       
-               <button type="submit" className="btn">Log in</button>
+               <Link type="submit" className="btn" to='/contact'>Log in</Link>
             </form>
          </div>
       </section>
