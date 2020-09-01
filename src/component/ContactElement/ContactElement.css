@@ -1,0 +1,49 @@
+.contact {
+   display: grid;
+   grid-template-columns: 4em 1fr minmax(2fr) 4em;
+   text-align: left;
+   border: 2px solid #ffffff;
+   border-radius: 20px;
+   padding: 10px 30px;
+   margin-bottom: 20px;
+}
+
+.contact__content {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 5px;
+   padding-bottom: 5px;
+   border-bottom: 1px solid #ffffff;
+}
+
+
+.contact__content {
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 5px;
+   margin-bottom: 5px;
+   border-bottom: 1px solid #ffffff;
+   position: relative;   
+}
+
+.edit {
+   background-color: initial;
+   border: none;
+   cursor: pointer;
+}
+
+.delete {
+   background-color: initial;
+   /* align-self: flex-start;
+   justify-self: flex-start; */
+   border: none;
+   cursor: pointer;
+}
+
+.material-icons {
+   color: #ffffff;
+   font-size: calc(10px + 2vmin);
+   cursor: pointer;
+}
+
+

@@ -9,6 +9,7 @@ import {
 
 import Login from './component/Login'
 import Contact from './component/Contact'
+import Modal from './component/Modal';
 
 
 import './App.css';
@@ -20,6 +21,7 @@ function App() {
       <Switch>
         <Route path='/login' component={Login} />
         <Route path='/contact' component={Contact} />
+        <Route path='/modal' component={Modal}/>
         <Redirect from='/' to='/login'/>
       </Switch>
     </div>

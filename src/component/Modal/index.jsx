@@ -1,7 +1,9 @@
-import React from 'react'
+import React , { useState} from 'react'
 import './Modal.css'
 
 function Modal() {
+   
+
    return (
       <section className="App-main">
          <div className="modal">
