@@ -16,6 +16,19 @@
 }
 
 .users-name {
-   font-size: calc(15px + 4vmin);
-   margin-bottom: 30px;
+   font-size: calc(15px + 1.3vmin);
+   line-height: 50px;
+}
+
+.container__head {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   justify-self: flex-start;
+}
+
+.btn__contact {
+   justify-self: flex-end;
+   font-size: calc(11px + 1.3vmin);
 }
