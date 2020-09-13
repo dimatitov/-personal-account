@@ -81,3 +81,8 @@
    width: 80%;
    align-self: center;
 }
+
+.invalid-feedback {
+   color: red;
+   font-size: calc(4px + 1.3vmin);
+}
