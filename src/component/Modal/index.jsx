@@ -10,12 +10,16 @@ import Context from "../../context"
 function Modal(){
     const { setUser } = useContext(Context)
     const history = useHistory()
-    const { login } = useLogin()
+    const { login, isLoadingLogin } = useLogin()
 
     const handleSubmitForm = (values) => {
-        setUser({name: values.firstName, surname: values.lastName})
-        history.push('/contact')
-        login()
+        (async () => {
+            const loginResponse = await login()
+            if(loginResponse.status === 200) {
+                setUser({name: values.firstName, surname: values.lastName})
+                history.push('/contact')
+            }
+        })()
     }
 
 
@@ -71,9 +75,11 @@ function Modal(){
                         <button
                             type="submit"
                             className="btn"
+                            disabled={isLoadingLogin}
                         >
                             Log in
                         </button>
+                        {isLoadingLogin && <div>Loading...</div>}
                      </Form>
                 )}
               </Formik>

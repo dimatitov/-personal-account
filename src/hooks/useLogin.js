@@ -1,19 +1,28 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+export const loginAPI = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({
+                status: 200,
+            })
+        }, 2000)
+    })
+}
 
 export const useLogin = () => {
-    const [response, setResponse] = useState({})
+    const [isLoadingLogin, setIsLoadingLogin] = useState(false)
 
     const login = async () => {
-        const serverResponse = await fetch('http://localhost:9000/users', {
-            method: 'POST',
-            body: JSON.stringify({
-                name: "Dima",
-                surname: "Titov"
-            })
-        })
-        console.log(serverResponse)
+        setIsLoadingLogin(true)
+        const serverResponse = await loginAPI()
+        setIsLoadingLogin(false)
+        return serverResponse
     }
+
     return {
-        login
+        login,
+        isLoadingLogin
     }
 }
+
