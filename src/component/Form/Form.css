@@ -1,6 +1,7 @@
 .contact-form {
    display: flex;
    justify-content: space-between;
+   margin-bottom: 25px;
 }
 
 .form-btn {
@@ -35,12 +36,3 @@
 .form-container input:last-child {
    border-bottom-left-radius: 20px;
 }
-
-/* .form-name {
-   position: relative;
-}
-
-.edit-form {
-   position: absolute;
-   top: 18%;
-} */

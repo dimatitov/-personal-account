@@ -22,6 +22,10 @@ const Contact = () => {
         ]))
     }
 
+    const handleDelete = (id) => {
+        setContactList(contactList => contactList.filter(contact => contact.id !== id))
+    }
+
    return (
       <section className="contact-component">
             <div className="container">
@@ -29,11 +33,13 @@ const Contact = () => {
                     <div className="users-name">Welcome, {`${user.name} ${user.surname}`}</div>
                     <Link type="submit" className="btn btn__contact" to='/login'>Log out</Link>
                 </div>
-                <ContactView
-                    contactList={contactList}
-                />
                 <Form
                     onAddContact={handleAddContact}
+                />
+
+                <ContactView
+                    contactList={contactList}
+                    onDeleteContact={handleDelete}
                 />
             </div>
       </section>

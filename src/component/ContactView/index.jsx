@@ -6,20 +6,21 @@ import ContactElement from '../ContactElement'
 import './ContactView.css'
 
 
-const ContactView = ({ contactList }) => {
+const ContactView = ({ contactList, onDeleteContact }) => {
     console.log('contactList', contactList)
    return (
       <section className="contact-container">
-          {contactList.map(contact =>
+          <div className="line" />
+
+          {contactList.sort((a, b) => a.name > b.name ? 1 : -1).map(contact =>
               <ContactElement
                   key={contact.id}
+                  id={contact.id}
                   phone={contact.phone}
                   name={contact.name}
+                  onDelete={onDeleteContact}
               />)
           }
-
-         <div className="line" />
-
       </section>
    )
 }
@@ -28,7 +29,8 @@ ContactElement.propTypes = {
     contactList: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
-        phone: PropTypes.string.isRequired
+        phone: PropTypes.string.isRequired,
+        onDeleteContact: PropTypes.func.isRequired
     }))
 }
 
