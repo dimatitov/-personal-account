@@ -1,24 +1,22 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './ContactElement.css'
 
 
-const ConactElement = () => {
+const ContactElement = ({ name, phone }) => {
    return (
-
       <section>
-      
          <div className="contact">
-            
             <div className="contact__content">
-               Fedor
+               {name}
                <button className="edit">
                   <i className="material-icons">create</i>
                </button>
             </div>
 
             <div className="contact__content">
-               8-800-963-87-88
+               {phone}
                <button className="edit">
                   <i className="material-icons">create</i>
                </button>
@@ -28,10 +26,13 @@ const ConactElement = () => {
                <i className="material-icons">clear</i>
             </button>
          </div>
-
-
       </section>
    )
 }
 
-export default ConactElement
+ContactElement.propTypes = {
+   name: PropTypes.string.isRequired,
+   phone: PropTypes.number.isRequired
+}
+
+export default ContactElement

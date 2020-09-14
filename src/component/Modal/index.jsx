@@ -1,19 +1,21 @@
 import React, {useContext, useState} from 'react'
 import { useHistory } from 'react-router-dom'
+import { useLogin } from '../../hooks/useLogin'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import './Modal.css'
-import Context from "../../context";
-
+import Context from "../../context"
 
 
 function Modal(){
     const { setUser } = useContext(Context)
     const history = useHistory()
+    const { login } = useLogin()
 
     const handleSubmitForm = (values) => {
         setUser({name: values.firstName, surname: values.lastName})
         history.push('/contact')
+        login()
     }
 
 
