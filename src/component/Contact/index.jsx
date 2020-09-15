@@ -12,6 +12,14 @@ const Contact = () => {
     const { user } = useContext(Context)
     const [contactList, setContactList] = useState(contacts)
 
+    const handleEdit = (id, name, phone) => {
+        setContactList(contactList => contactList.map(contact =>
+            contact.id === id
+                ? { ...contact, name, phone }
+                : contact)
+        )
+    }
+
     const handleAddContact = (name, phone) => {
         setContactList(contactList.concat([
             {
@@ -40,6 +48,7 @@ const Contact = () => {
                 <ContactView
                     contactList={contactList}
                     onDeleteContact={handleDelete}
+                    onEditContact={handleEdit}
                 />
             </div>
       </section>

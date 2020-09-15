@@ -6,7 +6,7 @@ import ContactElement from '../ContactElement'
 import './ContactView.css'
 
 
-const ContactView = ({ contactList, onDeleteContact }) => {
+const ContactView = ({ contactList, onDeleteContact, onEditContact }) => {
     console.log('contactList', contactList)
    return (
       <section className="contact-container">
@@ -19,6 +19,7 @@ const ContactView = ({ contactList, onDeleteContact }) => {
                   phone={contact.phone}
                   name={contact.name}
                   onDelete={onDeleteContact}
+                  onEdit={onEditContact}
               />)
           }
       </section>
@@ -30,7 +31,8 @@ ContactElement.propTypes = {
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
         phone: PropTypes.string.isRequired,
-        onDeleteContact: PropTypes.func.isRequired
+        onDeleteContact: PropTypes.func.isRequired,
+        onEditContact: PropTypes.func.isRequired
     }))
 }
 
