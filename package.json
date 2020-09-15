@@ -18,6 +18,11 @@
     "react-scripts": "3.4.3",
     "yup": "^0.29.3"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -38,5 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.2"
   }
 }
